@@ -11,11 +11,11 @@ interface ResultCardProps {
   distros?: string;
 }
 
-const ResultCard: React.FC<ResultCardProps> = ({ id, model, rating, badge, knownIssues, distros }) => {
+const SearchResultCard: React.FC<ResultCardProps> = ({ id, model, rating, badge, knownIssues, distros }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="result-card">
+    <li className="result-card">
       <div className="result-img"></div>
       <div className="result-content">
         <h3>{model}</h3>
@@ -32,14 +32,14 @@ const ResultCard: React.FC<ResultCardProps> = ({ id, model, rating, badge, known
           </div>
         )}
         <button 
-          className="view-details-btn" 
+          style={{ marginTop: '15px' }} 
           onClick={() => navigate(`/model/${id}`)}
         >
           View Details
         </button>
       </div>
-    </div>
+    </li>
   );
 };
 
-export default ResultCard;
+export default SearchResultCard;

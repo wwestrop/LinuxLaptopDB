@@ -19,22 +19,26 @@ const DashboardGrid: React.FC<DashboardGridProps> = ({ dataPromise }) => {
     <div className="dashboard-grid">
       <div className="card trending">
         <h3>Trending Compatibility Reports</h3>
-        {data.trendingReports.map(report=> (
-          <ReportItem
-            id={report.id} 
-            key={report.id}
-            model={report.model} 
-            rating={report.rating} 
-            badge={report.badge} 
-          />
-        ))}
+        <ul className="item-list">
+          {data.trendingReports.map(report=> (
+            <ReportItem
+              id={report.id} 
+              key={report.id}
+              model={report.model} 
+              rating={report.rating} 
+              badge={report.badge} 
+            />
+          ))}
+        </ul>
       </div>
 
       <div className="card recent">
         <h3>Recent Submissions</h3>
-        {data.recentSubmissions.map((submission, index) => (
-          <RecentSubmission key={index} text={submission.text} />
-        ))}
+        <ul className="item-list">
+          {data.recentSubmissions.map((submission, index) => (
+            <RecentSubmission key={index} text={submission.text} />
+          ))}
+        </ul>
       </div>
     </div>
   );

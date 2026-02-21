@@ -193,12 +193,12 @@ button, input[type="button"] {
   margin-bottom: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid var(--card-border);
-}
-
-.report-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .report-img {
@@ -245,11 +245,12 @@ button, input[type="button"] {
   gap: 30px;
   margin-bottom: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.result-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.2);
+  
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
 .result-img {
@@ -273,8 +274,10 @@ button, input[type="button"] {
   margin-bottom: 5px;
 }
 
-.view-details-btn {
-  margin-top: 15px;
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 input, textarea {

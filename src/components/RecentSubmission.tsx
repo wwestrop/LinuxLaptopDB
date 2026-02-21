@@ -6,10 +6,10 @@ interface RecentSubmissionProps {
 
 const RecentSubmission: React.FC<RecentSubmissionProps> = ({ text }) => {
   return (
-    <div className="recent-item">
+    <li className="recent-item">
       <span>▶</span>
       <div>{text}</div>
-    </div>
+    </li>
   );
 };
 

@@ -1,6 +1,6 @@
 import {use} from "react";
 import {SearchResult} from "../services/searchService";
-import SearchResultCard from "./ResultCard";
+import SearchResultCard from "./SearchResultCard";
 
 interface SearchResultsListProps {
   dataPromise: Promise<SearchResult[]>;
@@ -14,16 +14,18 @@ export const SearchResultsList: React.FC<SearchResultsListProps> = ({ dataPromis
     <section className="results-section">
       <h2>Results for "{query}"</h2>
 
-      {data.map(d => (
-          <SearchResultCard
-            id={d.id}
-            key={d.id} 
-            model={d.model} 
-            rating={d.rating} 
-            badge={d.badge}
-            knownIssues={d.knownIssues}
-          />
-      ))}
+      <ul className="item-list">
+        {data.map(d => (
+            <SearchResultCard
+              id={d.id}
+              key={d.id} 
+              model={d.model} 
+              rating={d.rating} 
+              badge={d.badge}
+              knownIssues={d.knownIssues}
+            />
+        ))}
+      </ul>
     </section>
   );
 };

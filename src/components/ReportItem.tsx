@@ -13,7 +13,7 @@ const ReportItem: React.FC<ReportItemProps> = ({ id, model, rating, badge }) => 
   const navigate = useNavigate();
 
   return (
-    <div 
+    <li 
       className="report-item" 
       onClick={() => navigate(`/model/${id}`)}
       style={{ cursor: 'pointer' }}
@@ -25,7 +25,7 @@ const ReportItem: React.FC<ReportItemProps> = ({ id, model, rating, badge }) => 
           <RatingStars rating={rating} /> {badge}
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 
