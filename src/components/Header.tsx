@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Header = () => {
   return (
     <header>
-      <div className="logo">
+      <Link to="/" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>
         <span>■</span> LinuxLaptopDB
-      </div>
+      </Link>
       <nav>
-        <a href="#">Browse</a>
+        <Link to="/">Browse</Link>
         <a href="#">Submit Report</a>
         <a href="#">Help</a>
       </nav>

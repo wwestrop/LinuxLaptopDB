@@ -1,56 +1,19 @@
-import React, { Suspense, use } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router';
 import './style.css';
-import Header from './components/Header';
-import SearchSection from './components/SearchSection';
-import DashboardGrid from './components/DashboardGrid';
-import Spinner from './components/Spinner';
-import ResultCard from './components/ResultCard';
-import { fetchDashboardData } from './services/reportService';
-
-const dashboardDataPromise = fetchDashboardData();
+import HomePage from './pages/HomePage';
+import SearchResultsPage from './pages/SearchResultsPage';
 
 const App = () => {
   return (
     <div className="app">
-      <Header />
-
-      <SearchSection />
-
-      <div className="browse-nav">
-        Browse by: 
-        <a href="#">Laptop Models</a> | 
-        <a href="#">Wi-Fi Chips</a> | 
-        <a href="#">GPUs</a> | 
-        <a href="#">Fingerprint Readers</a> | 
-        <a href="#">Docking Stations</a>
-      </div>
-
-      <Suspense fallback={<Spinner message="Loading grid" />}>
-        <DashboardGrid dataPromise={dashboardDataPromise} />
-      </Suspense>
-
-        <Suspense fallback={<Spinner message="Searching" />}>
-          <section className="results-section">
-            <h2>Results for "XPS 15 9520"</h2>
-            
-            <ResultCard 
-              model="Dell XPS 15 9520 (2022)"
-              rating={5}
-              badge="Gold"
-              knownIssues="Suspend, Hybrid GPU Switching, Webcam IR"
-              distros="Ubuntu 24.04, Fedora 40, Arch"
-            />
-    
-            <ResultCard 
-              model="Dell XPS 15 9510 (2021)"
-              rating={3}
-              badge="Silver"
-              knownIssues="Audio crackle, Thunderdock issues"
-            />
-          </section>
-        </Suspense>
-            
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchResultsPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
