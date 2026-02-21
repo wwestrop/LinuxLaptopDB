@@ -20,7 +20,7 @@ const recentSubmissions: Submission[] = [
   { text: "XPS 15 9520, Ubuntu 24.04: suspend flaky, needs kernel tweak" },
 ];
 
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+export const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const fetchDashboardData = async () => {
   await delay(3000);

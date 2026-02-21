@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      react:
+        specifier: ^19.2.4
+        version: 19.2.4
+      react-dom:
+        specifier: ^19.2.4
+        version: 19.2.4(react@19.2.4)
     devDependencies:
       '@types/react':
         specifier: ^19.2.14
@@ -17,12 +24,6 @@ importers:
       parcel:
         specifier: ^2.16.4
         version: 2.16.4(@swc/helpers@0.5.18)
-      react:
-        specifier: ^19.2.4
-        version: 19.2.4
-      react-dom:
-        specifier: ^19.2.4
-        version: 19.2.4(react@19.2.4)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
