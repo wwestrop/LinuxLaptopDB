@@ -1,10 +1,9 @@
 import {delay, fetchDashboardData} from "./reportService";
-import {ulid, ULID} from "ulid";
 import ResultCard from "../components/ResultCard";
 import React from "react";
 
 export interface SearchResult {
-    id: ULID,
+    id: string,
     model: string,
     rating: number,
     badge: string,

@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import RatingStars from './RatingStars';
 
 interface ResultCardProps {
+  id: string;
   model: string;
   rating: number;
   badge: string;
@@ -9,7 +11,9 @@ interface ResultCardProps {
   distros?: string;
 }
 
-const ResultCard: React.FC<ResultCardProps> = ({ model, rating, badge, knownIssues, distros }) => {
+const ResultCard: React.FC<ResultCardProps> = ({ id, model, rating, badge, knownIssues, distros }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="result-card">
       <div className="result-img"></div>
@@ -27,7 +31,12 @@ const ResultCard: React.FC<ResultCardProps> = ({ model, rating, badge, knownIssu
             <em>Most Used Distros:</em> {distros}
           </div>
         )}
-        <button className="view-details-btn">View Details</button>
+        <button 
+          className="view-details-btn" 
+          onClick={() => navigate(`/model/${id}`)}
+        >
+          View Details
+        </button>
       </div>
     </div>
   );

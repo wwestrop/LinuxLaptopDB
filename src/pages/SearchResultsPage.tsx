@@ -18,7 +18,8 @@ const SearchResultsPage = () => {
         <section className="results-section">
           <h2>Results for "{query}"</h2>
           
-          <ResultCard 
+          <ResultCard
+            id="01KJ0TMA6B4NRE8DT6HYAVWTDW"
             model="Dell XPS 15 9520 (2022)"
             rating={5}
             badge="Gold"
@@ -27,6 +28,7 @@ const SearchResultsPage = () => {
           />
   
           <ResultCard 
+            id="01KJ0TMA6BQDPE5H6ZAVKA8SGN"
             model="Dell XPS 15 9510 (2021)"
             rating={3}
             badge="Silver"

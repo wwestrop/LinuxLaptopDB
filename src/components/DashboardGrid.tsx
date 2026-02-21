@@ -19,9 +19,10 @@ const DashboardGrid: React.FC<DashboardGridProps> = ({ dataPromise }) => {
     <div className="dashboard-grid">
       <div className="card trending">
         <h3>Trending Compatibility Reports</h3>
-        {data.trendingReports.map((report, index) => (
-          <ReportItem 
-            key={index}
+        {data.trendingReports.map(report=> (
+          <ReportItem
+            id={report.id} 
+            key={report.id}
             model={report.model} 
             rating={report.rating} 
             badge={report.badge} 
