@@ -26,28 +26,31 @@ const App = () => {
         <a href="#">Docking Stations</a>
       </div>
 
-      <Suspense fallback={<Spinner />}>
+      <Suspense fallback={<Spinner message="Loading grid" />}>
         <DashboardGrid dataPromise={dashboardDataPromise} />
       </Suspense>
 
-      <section className="results-section">
-        <h2>Results for "XPS 15 9520"</h2>
-        
-        <ResultCard 
-          model="Dell XPS 15 9520 (2022)"
-          rating={5}
-          badge="Gold"
-          knownIssues="Suspend, Hybrid GPU Switching, Webcam IR"
-          distros="Ubuntu 24.04, Fedora 40, Arch"
-        />
-
-        <ResultCard 
-          model="Dell XPS 15 9510 (2021)"
-          rating={3}
-          badge="Silver"
-          knownIssues="Audio crackle, Thunderdock issues"
-        />
-      </section>
+        <Suspense fallback={<Spinner message="Searching" />}>
+          <section className="results-section">
+            <h2>Results for "XPS 15 9520"</h2>
+            
+            <ResultCard 
+              model="Dell XPS 15 9520 (2022)"
+              rating={5}
+              badge="Gold"
+              knownIssues="Suspend, Hybrid GPU Switching, Webcam IR"
+              distros="Ubuntu 24.04, Fedora 40, Arch"
+            />
+    
+            <ResultCard 
+              model="Dell XPS 15 9510 (2021)"
+              rating={3}
+              badge="Silver"
+              knownIssues="Audio crackle, Thunderdock issues"
+            />
+          </section>
+        </Suspense>
+            
     </div>
   );
 };
