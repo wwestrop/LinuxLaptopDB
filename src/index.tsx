@@ -8,6 +8,8 @@ import SearchResultsPage from './pages/SearchResultsPage';
 const App = () => {
   return (
     <div className="app">
+      <button>Hello</button> &nbsp;
+      <input type="button" value="IT button" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />

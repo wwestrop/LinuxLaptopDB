@@ -77,13 +77,32 @@ nav a {
   font-size: 1rem;
 }
 
-.search-container button {
+button, input[type="button"] {
   background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
   border: none;
   color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:hover, input[type="button"]:hover {
+  opacity: 0.9;
+}
+
+button:active, input[type="button"]:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.search-container button {
   padding: 0 30px;
   font-weight: bold;
-  cursor: pointer;
+  border-radius: 0;
 }
 
 .popular-searches {
@@ -215,6 +234,12 @@ nav a {
   display: flex;
   gap: 30px;
   margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .result-img {
@@ -239,12 +264,5 @@ nav a {
 }
 
 .view-details-btn {
-  background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
-  border: none;
-  color: white;
-  padding: 8px 20px;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
   margin-top: 15px;
 }
