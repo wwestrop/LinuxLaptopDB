@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Suspense, use } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 import Header from './components/Header';
 import SearchSection from './components/SearchSection';
 import DashboardGrid from './components/DashboardGrid';
+import Spinner from './components/Spinner';
 import ResultCard from './components/ResultCard';
+import { fetchDashboardData } from './services/reportService';
+
+const dashboardDataPromise = fetchDashboardData();
 
 const App = () => {
   return (
@@ -22,7 +26,9 @@ const App = () => {
         <a href="#">Docking Stations</a>
       </div>
 
-      <DashboardGrid />
+      <Suspense fallback={<Spinner />}>
+        <DashboardGrid dataPromise={dashboardDataPromise} />
+      </Suspense>
 
       <section className="results-section">
         <h2>Results for "XPS 15 9520"</h2>
