@@ -50,6 +50,12 @@ const SubmitReportPage = () => {
             <button type="submit" disabled={rating === 0}>Submit Report</button>
           </form>
         </div>
+        {/*// TODO other sensible questions (see proton DB queries)*/}
+        {/*// works out of the box*/}
+        {/*// any tweaks*/}
+        {/*// what doesnt work at all*/}
+        {/*// what doesnt work well*/}
+        {/*// other*/}
         <button onClick={() => navigate(-1)} style={{ marginTop: '20px' }}>Go Back</button>
       </main>
     </>
