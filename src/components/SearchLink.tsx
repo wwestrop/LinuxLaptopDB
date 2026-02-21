@@ -5,7 +5,7 @@ interface SearchLinkProps {
   text: string;
 }
 
-const QuickSearchLink: React.FC<SearchLinkProps> = ({ text }) => {
+const SearchLink: React.FC<SearchLinkProps> = ({ text }) => {
   const navigate = useNavigate();
 
   const handleClick = (e: React.MouseEvent) => {
@@ -20,4 +20,4 @@ const QuickSearchLink: React.FC<SearchLinkProps> = ({ text }) => {
   );
 };
 
-export default QuickSearchLink;
+export default SearchLink;

@@ -1,42 +1,28 @@
-import React, { Suspense } from 'react';
+import React, {Suspense, use} from 'react';
 import { useSearchParams } from 'react-router';
 import Header from '../components/Header';
 import SearchSection from '../components/SearchSection';
-import ResultCard from '../components/ResultCard';
 import Spinner from '../components/Spinner';
+import { basicSearch } from "../services/searchService";
+import {SearchResultsList} from "../components/SearchResultsList";
+
+
 
 const SearchResultsPage = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get('q') || '';
+  
+  const dataPromise = basicSearch(query);
 
   return (
-    <>
+    <div className="app">
       <Header />
       <SearchSection initialQuery={query} />
 
-      <Suspense fallback={<Spinner message="Searching" />}>
-        <section className="results-section">
-          <h2>Results for "{query}"</h2>
-          
-          <ResultCard
-            id="01KJ0TMA6B4NRE8DT6HYAVWTDW"
-            model="Dell XPS 15 9520 (2022)"
-            rating={5}
-            badge="Gold"
-            knownIssues="Suspend, Hybrid GPU Switching, Webcam IR"
-            distros="Ubuntu 24.04, Fedora 40, Arch"
-          />
-  
-          <ResultCard 
-            id="01KJ0TMA6BQDPE5H6ZAVKA8SGN"
-            model="Dell XPS 15 9510 (2021)"
-            rating={3}
-            badge="Silver"
-            knownIssues="Audio crackle, Thunderdock issues"
-          />
-        </section>
+      <Suspense key={query} fallback={<Spinner message="Searching" />}>
+        <SearchResultsList dataPromise={dataPromise} query={query} />
       </Suspense>
-    </>
+    </div>
   );
 };
 
