@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import SearchLink from './SearchLink';
 
 interface SearchSectionProps {
   initialQuery?: string;
@@ -35,9 +36,9 @@ const SearchSection: React.FC<SearchSectionProps> = ({ initialQuery = '' }) => {
       </div>
       <div className="popular-searches">
         Popular Searches: 
-        <a href="#">ThinkPad T14</a> | 
-        <a href="#">XPS 13</a> | 
-        <a href="#">Framework 13</a>
+        <SearchLink text="ThinkPad T14" /> | 
+        <SearchLink text="XPS 13" /> | 
+        <SearchLink text="Framework 13" />
       </div>
     </section>
   );

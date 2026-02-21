@@ -10,7 +10,6 @@ import SubmitReportPage from './pages/SubmitReportPage';
 const App = () => {
   return (
     <div className="app">
-      <button>hi</button>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
