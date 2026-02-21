@@ -10,12 +10,17 @@ const SubmitReportPage = () => {
   function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault(); 
     alert(`Validation handled here too`);
+    // TODO sensible validation
+    // minimum length
+    // ASCII only
+    // rate limiting
+    
     alert(`Report submitted with rating ${rating} (simulated)`);
     navigate('/');
   }
 
   return (
-    <div className="app">
+    <>
       <Header />
       <main className="results-section">
         <h2>Submit Compatibility Report</h2>
@@ -42,17 +47,12 @@ const SubmitReportPage = () => {
                 style={{ width: '100%', padding: '8px', background: 'rgba(0,0,0,0.2)', border: '1px solid var(--card-border)', color: 'white', borderRadius: '4px', minHeight: '100px' }}
               ></textarea>
             </div>
-            <button 
-              type="submit" 
-              disabled={rating === 0}
-            >
-              Submit Report
-            </button>
+            <button type="submit" disabled={rating === 0}>Submit Report</button>
           </form>
         </div>
         <button onClick={() => navigate(-1)} style={{ marginTop: '20px' }}>Go Back</button>
       </main>
-    </div>
+    </>
   );
 };
 

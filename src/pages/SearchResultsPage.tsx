@@ -15,14 +15,14 @@ const SearchResultsPage = () => {
   const dataPromise = basicSearch(query);
 
   return (
-    <div className="app">
+    <>
       <Header />
       <SearchSection initialQuery={query} />
 
       <Suspense key={query} fallback={<Spinner message="Searching" />}>
         <SearchResultsList dataPromise={dataPromise} query={query} />
       </Suspense>
-    </div>
+    </>
   );
 };
 

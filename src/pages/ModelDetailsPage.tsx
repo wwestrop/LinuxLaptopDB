@@ -6,7 +6,7 @@ const ModelDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
 
   return (
-    <div className="model-details-page">
+    <>
       <Header />
       <main>
         <div className="card">
@@ -19,7 +19,7 @@ const ModelDetailsPage = () => {
           <button style={{ marginTop: '20px' }} onClick={() => window.history.back()}>Go Back</button>
         </div>
       </main>
-    </div>
+    </>
   );
 };
 
