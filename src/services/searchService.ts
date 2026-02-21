@@ -1,6 +1,4 @@
-import {delay, fetchDashboardData} from "./reportService";
-import ResultCard from "../components/ResultCard";
-import React from "react";
+import {delay} from "./reportService";
 
 export interface SearchResult {
     id: string,
