@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './RecentSubmission.module.css';
 
 interface RecentSubmissionProps {
   text: string;
@@ -6,7 +7,7 @@ interface RecentSubmissionProps {
 
 const RecentSubmission: React.FC<RecentSubmissionProps> = ({ text }) => {
   return (
-    <li className="recent-item">
+    <li className={styles['recent-item']}>
       <span>▶</span>
       <div>{text}</div>
     </li>

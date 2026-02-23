@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import RatingStars from './RatingStars';
+import styles from './SearchResultCard.module.css';
 
 interface ResultCardProps {
   id: string;
@@ -15,19 +16,19 @@ const SearchResultCard: React.FC<ResultCardProps> = ({ id, model, rating, badge,
   const navigate = useNavigate();
 
   return (
-    <li className="result-card">
-      <div className="result-img"></div>
-      <div className="result-content">
+    <li className={styles['result-card']}>
+      <div className={styles['result-img']}></div>
+      <div className={styles['result-content']}>
         <h3>{model}</h3>
-        <div className="report-meta">
+        <div className={styles['report-meta']}>
           <RatingStars rating={rating} /> {badge}
         </div>
         <hr style={{ opacity: 0.1, margin: '15px 0' }} />
-        <div className="known-issues">
+        <div className={styles['known-issues']}>
           <em>Known Issues:</em> {knownIssues}
         </div>
         {distros && (
-          <div className="known-issues">
+          <div className={styles['known-issues']}>
             <em>Most Used Distros:</em> {distros}
           </div>
         )}

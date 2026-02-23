@@ -11,7 +11,7 @@ const InteractiveRatingStars: React.FC<InteractiveRatingStarsProps> = ({ value, 
   const displayValue = hoverValue !== null ? hoverValue : value;
 
   return (
-    <div className="interactive-rating-stars" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
       <div className="stars" style={{ cursor: 'pointer', fontSize: '1.2rem', color: 'var(--accent-gold)' }}>
         {[1, 2, 3, 4, 5].map((star) => (
           <span

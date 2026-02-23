@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './Spinner.module.css';
 
 export function Spinner(props: {message: string}) {
     return (
-        <div className="spinner-container">
-            <div className="spinner"></div>
+        <div className={styles['spinner-container']}>
+            <div className={styles.spinner}></div>
             <p>{props.message}...</p>
         </div>
     );

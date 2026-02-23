@@ -1,0 +1,13 @@
+.browse-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.browse-nav a {
+  color: white;
+  text-decoration: none;
+}

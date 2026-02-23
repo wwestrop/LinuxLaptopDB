@@ -4,6 +4,7 @@ import SearchSection from '../components/SearchSection';
 import DashboardGrid from '../components/DashboardGrid';
 import Spinner from '../components/Spinner';
 import { fetchDashboardData } from '../services/reportService';
+import styles from './HomePage.module.css';
 
 const dashboardDataPromise = fetchDashboardData();
 
@@ -13,7 +14,7 @@ const HomePage = () => {
       <Header />
       <SearchSection />
       
-      <div className="browse-nav">
+      <div className={styles['browse-nav']}>
         Browse by: 
         <a href="#">Laptop Models</a> | 
         <a href="#">Wi-Fi Chips</a> | 

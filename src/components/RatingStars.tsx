@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './RatingStars.module.css';
 
 interface RatingStarsProps {
   rating: number; // 0 to 5
@@ -9,7 +10,7 @@ const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
   const emptyStars = 5 - fullStars;
 
   return (
-    <span className="rating-stars">
+    <span className={styles['rating-stars']}>
       {'★'.repeat(fullStars)}
       {'☆'.repeat(emptyStars)}
     </span>

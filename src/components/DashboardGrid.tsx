@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import ReportItem from './ReportItem';
 import RecentSubmission from './RecentSubmission';
 import { Report, Submission } from '../services/reportService';
+import styles from './DashboardGrid.module.css';
 
 interface DashboardData {
   trendingReports: Report[];
@@ -16,7 +17,7 @@ const DashboardGrid: React.FC<DashboardGridProps> = ({ dataPromise }) => {
   const data = use(dataPromise);
 
   return (
-    <div className="dashboard-grid">
+    <div className={styles['dashboard-grid']}>
       <div className="card trending">
         <h3>Trending Compatibility Reports</h3>
         <ul className="item-list">

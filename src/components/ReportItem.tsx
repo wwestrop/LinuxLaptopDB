@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import RatingStars from './RatingStars';
+import styles from './ReportItem.module.css';
 
 interface ReportItemProps {
   id: string;
@@ -14,14 +15,14 @@ const ReportItem: React.FC<ReportItemProps> = ({ id, model, rating, badge }) => 
 
   return (
     <li 
-      className="report-item" 
+      className={styles['report-item']} 
       onClick={() => navigate(`/model/${id}`)}
       style={{ cursor: 'pointer' }}
     >
-      <div className="report-img"></div>
-      <div className="report-info">
+      <div className={styles['report-img']}></div>
+      <div className={styles['report-info']}>
         <h4>{model}</h4>
-        <div className="report-meta">
+        <div className={styles['report-meta']}>
           <RatingStars rating={rating} /> {badge}
         </div>
       </div>

@@ -1,0 +1,31 @@
+.report-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--card-border);
+  
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.report-img {
+  width: 60px;
+  height: 40px;
+  background: #2d3748;
+  border-radius: 4px;
+}
+
+.report-info h4 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.report-meta {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}

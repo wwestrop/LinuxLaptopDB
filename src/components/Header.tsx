@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
+import styles from './Header.module.css';
 
 const Header = () => {
   return (
     <header>
-      <Link to="/" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Link to="/" className={styles.logo} style={{ textDecoration: 'none', color: 'inherit' }}>
         <span>■</span> LinuxLaptopDB
       </Link>
       <nav>

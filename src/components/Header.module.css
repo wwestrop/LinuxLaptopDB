@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  color: var(--accent-blue);
+  margin-right: 4px;
+}
+
+nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.9rem;
+}

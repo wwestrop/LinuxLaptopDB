@@ -30,57 +30,6 @@ body {
   padding: 20px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  margin-bottom: 40px;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-}
-
-.logo span {
-  color: var(--accent-blue);
-  margin-right: 4px;
-}
-
-nav a {
-  color: var(--text-dim);
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 0.9rem;
-}
-
-.search-section {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.search-container {
-  display: flex;
-  max-width: 800px;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.search-container input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  padding: 15px 20px;
-  color: white;
-  font-size: 1rem;
-}
-
 button, input[type="button"] {
   background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
@@ -109,68 +58,26 @@ button, input[type="button"] {
   }
 }
 
-.search-container button {
-  padding: 0 30px;
-  font-weight: bold;
-  border-radius: 0;
+input, textarea {
+  &:invalid {
+    border: 1px solid #green;
+
+    &:focus {
+      outline: 2px solid #green;
+    }
+  }
 }
 
-.popular-searches {
-  margin-top: 15px;
-  font-size: 0.85rem;
-  color: var(--text-dim);
+/* TODO this is not a truly global style, but a few components use it to implement a semantic <ul>/<ol>
+    when presenting a list of items, without displaying them as a bulleted/numbered list */
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.popular-searches a {
-  color: var(--accent-blue);
-  text-decoration: none;
-  margin: 0 5px;
-}
-
-.browse-nav {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 40px;
-  font-size: 0.9rem;
-  color: var(--text-dim);
-}
-
-.browse-nav a {
-  color: white;
-  text-decoration: none;
-}
-
-.spinner-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  color: var(--text-dim);
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  border-left-color: var(--accent-blue);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 15px;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
+/* TODO this is not a truly global style, notably there are multiple types of card, such as result-card
+     These should be factored to a common Card component */
 .card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -179,6 +86,7 @@ button, input[type="button"] {
   backdrop-filter: blur(10px);
 }
 
+/* TODO as above */
 .card h3 {
   margin-top: 0;
   margin-bottom: 20px;
@@ -186,106 +94,8 @@ button, input[type="button"] {
   font-weight: 500;
 }
 
-.report-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--card-border);
-  
-  &:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-}
-
-.report-img {
-  width: 60px;
-  height: 40px;
-  background: #2d3748;
-  border-radius: 4px;
-}
-
-.report-info h4 {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-.report-meta {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-}
-
-.rating-stars {
-  color: var(--accent-gold);
-  margin-right: 5px;
-}
-
-.recent-item {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  color: var(--text-main);
-  display: flex;
-  gap: 10px;
-}
-
+/* TODO this is not a truly global style, it's more of a h2 / subtitle type of thing */
 .results-section h2 {
   font-size: 1.2rem;
   margin-bottom: 20px;
-}
-
-.result-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 25px;
-  display: flex;
-  gap: 30px;
-  margin-bottom: 20px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-}
-
-.result-img {
-  width: 150px;
-  height: 100px;
-  background: #2d3748;
-  border-radius: 6px;
-}
-
-.result-content {
-  flex: 1;
-}
-
-.result-content h3 {
-  margin: 0 0 10px 0;
-}
-
-.known-issues {
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  margin-bottom: 5px;
-}
-
-.item-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-input, textarea {
-  &:invalid {
-    border: 1px solid #ef4444;
-
-    &:focus {
-      outline: 2px solid #ef4444;
-    }
-  }
 }
