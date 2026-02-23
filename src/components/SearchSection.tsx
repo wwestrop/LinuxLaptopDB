@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import PopularSearches from './PopularSearches';
 import { getPopularSearches } from '../services/searchService';
@@ -13,6 +13,10 @@ interface SearchSectionProps {
 const SearchSection: React.FC<SearchSectionProps> = ({ initialQuery = '' }) => {
   const [query, setQuery] = useState(initialQuery);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setQuery(initialQuery);
+  }, [initialQuery]);
 
   const handleSearch = () => {
     if (query.trim()) {
