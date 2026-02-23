@@ -16,7 +16,7 @@ const SearchResultCard: React.FC<ResultCardProps> = ({ id, model, rating, badge,
   const navigate = useNavigate();
 
   return (
-    <li className={styles['result-card']}>
+    <li className={`${styles.resultCard} card`}>
       <div className={styles['result-img']}></div>
       <div className={styles['result-content']}>
         <h3>{model}</h3>

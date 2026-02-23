@@ -76,14 +76,19 @@ input, textarea {
   margin: 0;
 }
 
-/* TODO this is not a truly global style, notably there are multiple types of card, such as result-card
-     These should be factored to a common Card component */
 .card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 20px;
   backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
 /* TODO as above */
