@@ -31,3 +31,7 @@ export async function basicSearch(searchTerm: string): Promise<SearchResult[]> {
         },
     ];
 }
+
+export async function getPopularSearches(): Promise<string[]> {
+    return ["ThinkPad T14", "XPS 13", "Framework 13"];
+}

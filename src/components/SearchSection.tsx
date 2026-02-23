@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useNavigate } from 'react-router';
-import SearchLink from './SearchLink';
+import PopularSearches from './PopularSearches';
+import { getPopularSearches } from '../services/searchService';
+
+const popularSearchesPromise = getPopularSearches().catch(() => []);
 
 interface SearchSectionProps {
   initialQuery?: string;
@@ -34,12 +37,9 @@ const SearchSection: React.FC<SearchSectionProps> = ({ initialQuery = '' }) => {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      <div className="popular-searches">
-        Popular Searches: 
-        <SearchLink text="ThinkPad T14" /> | 
-        <SearchLink text="XPS 13" /> | 
-        <SearchLink text="Framework 13" />
-      </div>
+      <Suspense fallback={<div className="popular-searches">&nbsp;</div>}>
+        <PopularSearches dataPromise={popularSearchesPromise} />
+      </Suspense>
     </section>
   );
 };
