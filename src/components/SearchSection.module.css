@@ -1,9 +1,9 @@
-.search-section {
+.searchSection {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.search-container {
+.searchContainer {
   display: flex;
   max-width: 800px;
   margin: 0 auto;
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-.search-container input {
+.searchContainer input {
   flex: 1;
   background: transparent;
   border: none;
@@ -22,8 +22,20 @@
   font-size: 1rem;
 }
 
-.search-container button {
+.searchContainer button {
   padding: 0 30px;
   font-weight: bold;
   border-radius: 0;
+}
+
+.popularSearches {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+
+  a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    margin: 0 5px;
+  }
 }

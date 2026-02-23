@@ -17,18 +17,18 @@ const SearchResultCard: React.FC<ResultCardProps> = ({ id, model, rating, badge,
 
   return (
     <li className={`${styles.resultCard} card`}>
-      <div className={styles['result-img']}></div>
-      <div className={styles['result-content']}>
+      <div className={styles.resultImg}></div>
+      <div className={styles.resultContent}>
         <h3>{model}</h3>
-        <div className={styles['report-meta']}>
+        <div style={{ fontSize: "0.8rem", color: "var(--text-dim)"}}>
           <RatingStars rating={rating} /> {badge}
         </div>
         <hr style={{ opacity: 0.1, margin: '15px 0' }} />
-        <div className={styles['known-issues']}>
+        <div className={styles.knownIssues}>
           <em>Known Issues:</em> {knownIssues}
         </div>
         {distros && (
-          <div className={styles['known-issues']}>
+          <div className={styles.knownIssues}>
             <em>Most Used Distros:</em> {distros}
           </div>
         )}

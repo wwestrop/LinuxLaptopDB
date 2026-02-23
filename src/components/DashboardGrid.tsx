@@ -17,7 +17,7 @@ const DashboardGrid: React.FC<DashboardGridProps> = ({ dataPromise }) => {
   const data = use(dataPromise);
 
   return (
-    <div className={styles['dashboard-grid']}>
+    <div className={styles.dashboardGrid}>
       <div className="card trending">
         <h3>Trending Compatibility Reports</h3>
         <ul className="item-list">

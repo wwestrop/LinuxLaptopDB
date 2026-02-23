@@ -1,4 +1,4 @@
-.browse-nav {
+.browseNav {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -7,7 +7,7 @@
   color: var(--text-dim);
 }
 
-.browse-nav a {
+.browseNav a {
   color: white;
   text-decoration: none;
 }

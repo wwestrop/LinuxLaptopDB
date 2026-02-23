@@ -15,14 +15,14 @@ const ReportItem: React.FC<ReportItemProps> = ({ id, model, rating, badge }) => 
 
   return (
     <li 
-      className={styles['report-item']} 
+      className={styles.reportItem} 
       onClick={() => navigate(`/model/${id}`)}
       style={{ cursor: 'pointer' }}
     >
-      <div className={styles['report-img']}></div>
-      <div className={styles['report-info']}>
+      <div className={styles.reportImg}></div>
+      <div className={styles.reportInfo}>
         <h4>{model}</h4>
-        <div className={styles['report-meta']}>
+        <div className={styles.reportMeta}>
           <RatingStars rating={rating} /> {badge}
         </div>
       </div>

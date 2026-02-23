@@ -14,7 +14,7 @@ const HomePage = () => {
       <Header />
       <SearchSection />
       
-      <div className={styles['browse-nav']}>
+      <div className={styles.browseNav}>
         Browse by: 
         <a href="#">Laptop Models</a> | 
         <a href="#">Wi-Fi Chips</a> | 

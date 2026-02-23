@@ -10,7 +10,7 @@ const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
   const emptyStars = 5 - fullStars;
 
   return (
-    <span className={styles['rating-stars']}>
+    <span className={styles.ratingStars}>
       {'★'.repeat(fullStars)}
       {'☆'.repeat(emptyStars)}
     </span>

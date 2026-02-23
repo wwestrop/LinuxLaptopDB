@@ -4,22 +4,22 @@
   margin-bottom: 20px;
 }
 
-.result-img {
+.resultImg {
   width: 150px;
   height: 100px;
   background: #2d3748;
   border-radius: 6px;
 }
 
-.result-content {
+.resultContent {
   flex: 1;
 }
 
-.result-content h3 {
+.resultContent h3 {
   margin: 0 0 10px 0;
 }
 
-.known-issues {
+.knownIssues {
   font-size: 0.85rem;
   color: var(--text-dim);
   margin-bottom: 5px;

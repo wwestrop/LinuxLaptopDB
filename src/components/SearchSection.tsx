@@ -27,8 +27,8 @@ const SearchSection: React.FC<SearchSectionProps> = ({ initialQuery = '' }) => {
   };
 
   return (
-    <section className={styles['search-section']}>
-      <div className={styles['search-container']}>
+    <section className={styles.searchSection}>
+      <div className={styles.searchContainer}>
         <input 
           type="text" 
           placeholder="Search laptop model, SKU, or hardware ID..." 
@@ -38,9 +38,11 @@ const SearchSection: React.FC<SearchSectionProps> = ({ initialQuery = '' }) => {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      <Suspense fallback={<div className={styles['popular-searches']}>&nbsp;</div>}>
-        <PopularSearches dataPromise={popularSearchesPromise} />
-      </Suspense>
+      <div className={styles.popularSearches}>
+        <Suspense fallback="&nbsp;">
+          <PopularSearches dataPromise={popularSearchesPromise} />
+        </Suspense>
+      </div>
     </section>
   );
 };

@@ -7,7 +7,7 @@ interface RecentSubmissionProps {
 
 const RecentSubmission: React.FC<RecentSubmissionProps> = ({ text }) => {
   return (
-    <li className={styles['recent-item']}>
+    <li className={styles.recentItem}>
       <span>▶</span>
       <div>{text}</div>
     </li>
