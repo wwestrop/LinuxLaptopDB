@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "api:dev": "pnpm --filter linux-laptop-db-api dev"
   },
   "keywords": [],
   "author": "",
