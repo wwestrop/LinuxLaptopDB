@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import RatingStars from './RatingStars';
-import styles from './SearchResultCard.module.css';
+import * as styles from './SearchResultCard.module.css';
 
 interface ResultCardProps {
   id: string;

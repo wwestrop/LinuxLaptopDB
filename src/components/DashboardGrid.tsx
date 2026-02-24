@@ -2,7 +2,7 @@ import React, { use } from 'react';
 import ReportItem from './ReportItem';
 import RecentSubmission from './RecentSubmission';
 import { Report, Submission } from '../services/reportService';
-import styles from './DashboardGrid.module.css';
+import * as styles from './DashboardGrid.module.css';
 
 interface DashboardData {
   trendingReports: Report[];

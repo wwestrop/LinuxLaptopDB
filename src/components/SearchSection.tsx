@@ -2,7 +2,7 @@ import React, { useState, Suspense, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import PopularSearches from './PopularSearches';
 import { getPopularSearches } from '../services/searchService';
-import styles from './SearchSection.module.css';
+import * as styles from './SearchSection.module.css';
 
 const popularSearchesPromise = getPopularSearches().catch(() => []);
 

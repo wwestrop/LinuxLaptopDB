@@ -4,7 +4,7 @@ import SearchSection from '../components/SearchSection';
 import DashboardGrid from '../components/DashboardGrid';
 import Spinner from '../components/Spinner';
 import { fetchDashboardData } from '../services/reportService';
-import styles from './HomePage.module.css';
+import * as styles from './HomePage.module.css';
 
 const dashboardDataPromise = fetchDashboardData();
 

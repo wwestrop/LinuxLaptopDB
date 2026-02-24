@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import RatingStars from './RatingStars';
-import styles from './ReportItem.module.css';
+import * as styles from './ReportItem.module.css';
 
 interface ReportItemProps {
   id: string;

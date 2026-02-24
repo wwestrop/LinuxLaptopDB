@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './RecentSubmission.module.css';
+import * as styles from './RecentSubmission.module.css';
 
 interface RecentSubmissionProps {
   text: string;

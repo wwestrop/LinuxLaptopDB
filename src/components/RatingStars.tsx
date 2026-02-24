@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './RatingStars.module.css';
+import * as styles from './RatingStars.module.css';
 
 interface RatingStarsProps {
   rating: number; // 0 to 5
