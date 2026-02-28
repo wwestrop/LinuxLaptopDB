@@ -1,12 +1,11 @@
 {
-  "name": "SpikeSprocEnum",
+  "name": "LinuxLaptopDB",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "lint": "eslint src",
-    "api:dev": "pnpm --filter linux-laptop-db-api dev"
+    "lint": "eslint src"
   },
   "keywords": [],
   "author": "",
