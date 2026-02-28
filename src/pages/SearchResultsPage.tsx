@@ -1,4 +1,4 @@
-import React, {Suspense, use} from 'react';
+import React, {Suspense, useMemo} from 'react';
 import { useSearchParams } from 'react-router';
 import Header from '../components/Header';
 import SearchSection from '../components/SearchSection';
@@ -12,7 +12,7 @@ const SearchResultsPage = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get('q') || '';
   
-  const dataPromise = basicSearch(query);
+  const dataPromise = useMemo(() => basicSearch(query), [query]);
 
   return (
     <>

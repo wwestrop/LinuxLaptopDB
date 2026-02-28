@@ -1,4 +1,4 @@
-import {delay} from "./reportService";
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3001';
 
 export interface SearchResult {
     id: string,
@@ -10,28 +10,18 @@ export interface SearchResult {
 }
 
 export async function basicSearch(searchTerm: string): Promise<SearchResult[]> {
-    await delay(1000);
-    
-    return [
-        {
-            id: "01KJ0TMA6B4NRE8DT6HYAVWTDW",
-            model: "Dell XPS 15 9520 (2022)",
-            rating: 5,
-            badge: "Gold",
-            knownIssues: "Suspend, Hybrid GPU Switching, Webcam IR",
-            popularDistros: "Ubuntu 24.04, Fedora 40, Arch",
-        },
-        {
-            id: "01KJ0TMA6BQDPE5H6ZAVKA8SGN",
-            model: "Dell XPS 15 9510 (2021)",
-            rating: 3,
-            badge: "Silver",
-            knownIssues: "Audio crackle, Thunderdock issues",
-            popularDistros: "",
-        },
-    ];
+    const response = await fetch(`${API_BASE_URL}/api/search?q=${encodeURIComponent(searchTerm)}`);
+    if (!response.ok) {
+        throw new Error(`Search failed with status: ${response.status}`);
+    }
+    return response.json();
 }
 
 export async function getPopularSearches(): Promise<string[]> {
-    return ["ThinkPad T14", "XPS 13", "Framework 13"];
+    const response = await fetch(`${API_BASE_URL}/api/popular-searches`);
+    if (!response.ok) {
+        // TODO should probably log this or something, but don't want this to cause a failure
+        return [];
+    }
+    return response.json();
 }
