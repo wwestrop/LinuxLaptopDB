@@ -34,8 +34,6 @@
   color: var(--text-dim);
 
   a {
-    color: var(--accent-blue);
-    text-decoration: none;
     margin: 0 5px;
   }
 }

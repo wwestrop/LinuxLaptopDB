@@ -5,6 +5,7 @@
   --text-main: #e0e0e0;
   --text-dim: #a0a0a0;
   --accent-blue: #3b82f6;
+  --accent-red: #ef4444;
   --accent-gold: #fbbf24;
   --accent-silver: #9ca3af;
   --accent-bronze: #d97706;
@@ -60,11 +61,21 @@ button, input[type="button"] {
 
 input, textarea {
   &:invalid {
-    border: 1px solid #green;
+    border: 1px solid var(--accent-red);
 
     &:focus {
-      outline: 2px solid #green;
+      outline: 2px solid var(--accent-red);
     }
+  }
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
   }
 }
 

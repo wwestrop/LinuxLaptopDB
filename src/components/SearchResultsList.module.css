@@ -1,0 +1,5 @@
+.noResults {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-dim);
+}

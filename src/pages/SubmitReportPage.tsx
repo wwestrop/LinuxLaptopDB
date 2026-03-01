@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
-import { useNavigate } from 'react-router';
+import { useNavigate, useSearchParams } from 'react-router';
 import InteractiveRatingStars from '../components/InteractiveRatingStars';
 
 const SubmitReportPage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const initialModel = searchParams.get('model') || '';
+  const [model, setModel] = useState(initialModel);
   const [rating, setRating] = useState(0);
   
   function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
@@ -32,13 +35,15 @@ const SubmitReportPage = () => {
                 type="text" 
                 required 
                 placeholder="e.g. Lenovo ThinkPad T14" 
+                value={model}
+                onChange={(e) => setModel(e.target.value)}
                 style={{ width: '100%', padding: '8px', background: 'rgba(0,0,0,0.2)', border: '1px solid var(--card-border)', color: 'white', borderRadius: '4px' }} 
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px' }}>Your Rating:</label>
               <InteractiveRatingStars value={rating} onChange={setRating} />
-              {rating === 0 && <span style={{ color: '#ef4444', fontSize: '0.8rem', marginLeft: '10px' }}>Please select a rating</span>}
+              {rating === 0 && <span style={{ color: 'var(--accent-red)', fontSize: '0.8rem', marginLeft: '10px' }}>Please select a rating</span>}
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px' }}>Details / Known Issues:</label>
