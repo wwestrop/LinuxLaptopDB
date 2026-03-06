@@ -1,7 +1,9 @@
+import {ModelId} from "../types/identifiers";
+
 const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3001';
 
 export interface SearchResult {
-    id: string,
+    id: ModelId,
     model: string,
     rating: number,
     badge: string,  // TODO use an enum
@@ -26,7 +28,7 @@ export async function getPopularSearches(): Promise<string[]> {
     return response.json();
 }
 
-export async function getModelSummary(id: string): Promise<SearchResult> {
+export async function getModelSummary(id: ModelId): Promise<SearchResult> {
     const response = await fetch(`${API_BASE_URL}/api/model/${encodeURIComponent(id)}`);
     if (!response.ok) {
         throw new Error(`Failed to get model details for id: ${id}`);

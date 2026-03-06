@@ -2,9 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import RatingStars from './RatingStars';
 import * as styles from './SearchResultCard.module.css';
+import { ModelId } from "../types/identifiers";
 
 interface ResultCardProps {
-  id: string;
+  id: ModelId;
   model: string;
   rating: number;
   badge: string;

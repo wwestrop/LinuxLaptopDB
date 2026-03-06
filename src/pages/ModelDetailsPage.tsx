@@ -4,9 +4,10 @@ import Header from '../components/Header';
 import ModelDetails from '../components/ModelDetails';
 import Spinner from '../components/Spinner';
 import { getModelSummary } from '../services/searchService';
+import { ModelId } from "../types/identifiers";
 
 const ModelDetailsPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<{ id: ModelId }>();
 
   const dataPromise = useMemo(() => {
     if (!id) return Promise.reject("No ID provided");

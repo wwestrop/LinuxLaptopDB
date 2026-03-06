@@ -1,0 +1,1 @@
+export type ModelId = string & { readonly __brand: unique symbol };
