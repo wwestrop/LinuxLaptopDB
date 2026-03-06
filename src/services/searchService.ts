@@ -4,9 +4,9 @@ export interface SearchResult {
     id: string,
     model: string,
     rating: number,
-    badge: string,
+    badge: string,  // TODO use an enum
     knownIssues: string,
-    popularDistros: string,
+    popularDistros: string, // TODO split into a list
 }
 
 export async function basicSearch(searchTerm: string): Promise<SearchResult[]> {
@@ -22,6 +22,14 @@ export async function getPopularSearches(): Promise<string[]> {
     if (!response.ok) {
         // TODO should probably log this or something, but don't want this to cause a failure
         return [];
+    }
+    return response.json();
+}
+
+export async function getModelSummary(id: string): Promise<SearchResult> {
+    const response = await fetch(`${API_BASE_URL}/api/model/${encodeURIComponent(id)}`);
+    if (!response.ok) {
+        throw new Error(`Failed to get model details for id: ${id}`);
     }
     return response.json();
 }

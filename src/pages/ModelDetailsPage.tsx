@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { Suspense, useMemo } from 'react';
 import { useParams } from 'react-router';
 import Header from '../components/Header';
+import ModelDetails from '../components/ModelDetails';
+import Spinner from '../components/Spinner';
+import { getModelSummary } from '../services/searchService';
 
 const ModelDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
+
+  const dataPromise = useMemo(() => {
+    if (!id) return Promise.reject("No ID provided");
+    return getModelSummary(id);
+  }, [id]);
 
   return (
     <>
       <Header />
       <main>
-        <div className="card">
-          <h2>Model Details</h2>
-          <p style={{ color: 'var(--text-dim)' }}>Model ID: {id}</p>
-          <div style={{ marginTop: '20px', padding: '20px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
-            <p>This is a skeletal model details page for the laptop with ID: <strong>{id}</strong>.</p>
-            <p>Full hardware specifications, compatibility status, and user reviews will be displayed here in the future.</p>
+          <div className="card">
+              <Suspense fallback={<Spinner message="Loading model details" />}>
+                  <ModelDetails dataPromise={dataPromise} />
+              </Suspense>
+
+              <button style={{ marginTop: '20px' }} onClick={() => window.history.back()}>Go Back</button>
           </div>
-          <button style={{ marginTop: '20px' }} onClick={() => window.history.back()}>Go Back</button>
-        </div>
       </main>
     </>
   );
