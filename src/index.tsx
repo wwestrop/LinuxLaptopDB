@@ -10,6 +10,7 @@ import SubmitReportPage from './pages/SubmitReportPage';
 const App = () => {
   return (
     <div className="app">
+      <div className="alpha-badge">ALPHA</div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />

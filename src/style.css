@@ -12,6 +12,29 @@
   --accent-platinum: #e5e7eb;
 }
 
+.alpha-badge {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 270px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transform: rotate(45deg) translate(30%, -40%);
+  transform-origin: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 * {
   box-sizing: border-box;
 }
